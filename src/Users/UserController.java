@@ -75,7 +75,7 @@ public class UserController {
 	}
 	
 	//consultar todo
-	ArrayList<UserVO> consultarTodo(){
+	ArrayList<UserVO> allUsers(){
 		ArrayList<UserVO> lista_usuarios = new ArrayList<>();
 		try {
 			resultado = sentencia.executeQuery("select * from users ;");

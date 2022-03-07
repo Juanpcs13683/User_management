@@ -46,6 +46,7 @@ public class Insert {
 				UserController db = new UserController();
 				try {
 					db.conectar();
+					db.sentencia = db.conexion.createStatement();
 					db.createTable();
 					db.insert(
 							name.getText(),
@@ -56,9 +57,7 @@ public class Insert {
 							company.getText());
 							db.conexion.close();
 							db.sentencia.close();
-							db.resultado.close();
-							JOptionPane.showMessageDialog(saveButton, 
-									"Usuario creado con exito");
+							JOptionPane.showMessageDialog(null, "Usuario creado con exito");
 							
 							//get textField vacio
 							name.setText(null);

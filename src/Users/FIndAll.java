@@ -40,7 +40,7 @@ public class FIndAll {
 		try {
 			db.conectar();
 			db.sentencia = db.conexion.createStatement();
-			ArrayList<UserVO> users_list = db.consultarTodo();
+			ArrayList<UserVO> users_list = db.allUsers();
 			for(UserVO user: users_list) {
 				values.add(new String[] {
 					user.getName(),
