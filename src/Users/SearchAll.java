@@ -11,9 +11,9 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 
-public class FIndAll {
+public class SearchAll {
 	public static void main(String[] args) {
-		FIndAll findAll = new FIndAll();
+		SearchAll findAll = new SearchAll();
 		findAll.findAll();
 	}
 	

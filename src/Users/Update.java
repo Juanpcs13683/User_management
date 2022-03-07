@@ -28,27 +28,27 @@ public class Update {
 		
 		JLabel labelname = new JLabel("Name");
 		JTextField name = new JTextField(15);
-		name.setEnabled(false);
+		name.setEditable(false);
 		
 		JLabel labellastName = new JLabel("Last Name");
 		JTextField lastName = new JTextField(15);
-		lastName.setEnabled(false);
+		lastName.setEditable(false);
 		
 		JLabel labelbirthday = new JLabel("Birthday");
 		JTextField birthday = new JTextField(15);
-		birthday.setEnabled(false);
+		birthday.setEditable(false);
 		
 		JLabel labelemail = new JLabel("Email");
 		JTextField email = new JTextField(15);
-		email.setEnabled(false);
+		email.setEditable(false);
 		
 		JLabel labelnumber = new JLabel("Number");
 		JTextField number = new JTextField(15);
-		number.setEnabled(false);
+		number.setEditable(false);
 		
 		JLabel labelcompany = new JLabel("Company");
 		JTextField company = new JTextField(15);
-		company.setEnabled(false);
+		company.setEditable(false);
 		
 		JButton searchButton = new JButton("Search");
 		searchButton.setBackground(Color.BLUE);
@@ -68,11 +68,11 @@ public class Update {
 					lastName.setText(user.getLastName());
 					birthday.setText(user.getBirthday());
 					email.setText(user.getEmail());
-					email.setEnabled(true);
+					email.setEditable(true);
 					number.setText(Long.toString(user.getNumber()));
-					number.setEnabled(true);
+					number.setEditable(true);
 					company.setText(user.getCompany());
-					company.setEnabled(true);
+					company.setEditable(true);
 					db.close();
 				}catch(Exception ex) {
 					JOptionPane.showMessageDialog(null, "Error: "+ex.getMessage(),

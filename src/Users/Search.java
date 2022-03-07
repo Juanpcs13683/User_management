@@ -11,9 +11,9 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class Find {
+public class Search {
 	public static void main(String[] args) {
-		Find find = new Find();
+		Search find = new Search();
 		find.find();
 	}
 	
@@ -24,30 +24,37 @@ public class Find {
 		
 		JLabel labelfind = new JLabel("Email to search");
 		JTextField find = new JTextField(15);
+		find.setHorizontalAlignment(JTextField.CENTER);
 		
 		JLabel labelname = new JLabel("Name");
 		JTextField name = new JTextField(15);
-		name.setEnabled(false);
+		name.setEditable(false);
+		name.setHorizontalAlignment(JTextField.CENTER);
 		
 		JLabel labellastName = new JLabel("Last Name");
 		JTextField lastName = new JTextField(15);
-		lastName.setEnabled(false);
+		lastName.setEditable(false);
+		lastName.setHorizontalAlignment(JTextField.CENTER);
 		
 		JLabel labelbirthday = new JLabel("Birthday");
 		JTextField birthday = new JTextField(15);
-		birthday.setEnabled(false);
+		birthday.setEditable(false);
+		birthday.setHorizontalAlignment(JTextField.CENTER);
 		
 		JLabel labelemail = new JLabel("Email");
 		JTextField email = new JTextField(15);
-		email.setEnabled(false);
+		email.setEditable(false);
+		email.setHorizontalAlignment(JTextField.CENTER);
 		
 		JLabel labelnumber = new JLabel("Number");
 		JTextField number = new JTextField(15);
-		number.setEnabled(false);
+		number.setEditable(false);
+		number.setHorizontalAlignment(JTextField.CENTER);
 		
 		JLabel labelcompany = new JLabel("Company");
 		JTextField company = new JTextField(15);
-		company.setEnabled(false);
+		company.setEditable(false);
+		company.setHorizontalAlignment(JTextField.CENTER);
 		
 		JButton findButton = new JButton("Find");
 		findButton.addActionListener(new ActionListener() {
