@@ -117,13 +117,13 @@ public class UserController {
 	}
 	
 	//modificar usuario
-	void updateUser(String email, long number, String company) {
+	void updateUser(String email, long number, String company, String newEmail) {
 		try {
-			sentencia.execute("UPDATE users"
-					+"SET email ='" + email + "',"
+			sentencia.execute("UPDATE users "
+					+"SET email ='" + newEmail + "',"
 					+"number = " + number + ","
 					+"company = '" + company + "'"
-					+"WERE email = '" + email + "';");
+					+"WHERE email = '" + email + "';");
 			
 		}catch(SQLException ex) {
 			System.out.println("Error al actualizar: "+ex.getMessage());
