@@ -3,6 +3,8 @@ package Users;
 import java.sql.*;
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
+
 
 
 public class UserController {
@@ -135,5 +137,25 @@ public class UserController {
 		}catch(SQLException ex) {
 		System.out.println("Error al eliminar usuario: "+ex.getMessage());
 		}
+	}
+	
+	// cerrar la conexion
+	void close() {
+		try {
+			sentencia.close();
+		}catch(SQLException ex) {
+			JOptionPane.showMessageDialog(null, "Error: "+ex.getMessage(), "error", JOptionPane.ERROR_MESSAGE);
+		}
+		try {
+			conexion.close();
+		}catch(SQLException ex) {
+			JOptionPane.showMessageDialog(null, "Error: "+ex.getMessage(), "error", JOptionPane.ERROR_MESSAGE);
+		}
+		try {
+			resultado.close();
+		}catch(SQLException ex) {
+			JOptionPane.showMessageDialog(null, "Error: "+ex.getMessage(), "error", JOptionPane.ERROR_MESSAGE);
+		}
+		
 	}
 }
