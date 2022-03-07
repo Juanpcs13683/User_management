@@ -4,69 +4,72 @@ import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 
-import javax.swing.*;
-
-public class Insert {
+public class Find {
 	public static void main(String[] args) {
-		Insert i = new Insert();
-		i.insert();
+		Find find = new Find();
+		find.find();
 	}
 	
-	public void insert() {
-		JFrame window = new JFrame("Insert");
-		
+	public void find() {
+		JFrame window = new JFrame("Find User");
 		JPanel panel = new JPanel();
 		panel.setLayout(new FlowLayout());
 		
+		JLabel labelfind = new JLabel("Email to search");
+		JTextField find = new JTextField(15);
+		
 		JLabel labelname = new JLabel("Name");
 		JTextField name = new JTextField(15);
+		name.setEnabled(false);
 		
 		JLabel labellastName = new JLabel("Last Name");
 		JTextField lastName = new JTextField(15);
+		lastName.setEnabled(false);
 		
 		JLabel labelbirthday = new JLabel("Birthday");
 		JTextField birthday = new JTextField(15);
+		birthday.setEnabled(false);
 		
 		JLabel labelemail = new JLabel("Email");
 		JTextField email = new JTextField(15);
+		email.setEnabled(false);
 		
 		JLabel labelnumber = new JLabel("Number");
 		JTextField number = new JTextField(15);
+		number.setEnabled(false);
 		
 		JLabel labelcompany = new JLabel("Company");
 		JTextField company = new JTextField(15);
+		company.setEnabled(false);
 		
-		JButton saveButton = new JButton("Save");
-		saveButton.addActionListener(new ActionListener() {
+		JButton findButton = new JButton("Find");
+		findButton.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
+				UserVO user = null;
 				UserController db = new UserController();
 				try {
 					db.conectar();
-					db.createTable();
-					db.insert(
-							name.getText(),
-							lastName.getText(),
-							birthday.getText(),
-							email.getText(),
-							Long.parseLong(number.getText()),
-							company.getText());
-							db.conexion.close();
-							db.sentencia.close();
-							db.resultado.close();
-							JOptionPane.showMessageDialog(saveButton, 
-									"Usuario creado con exito");
-							
-							//get textField vacio
-							name.setText(null);
-							lastName.setText(null);
-							birthday.setText(null);
-							email.setText(null);
-							number.setText(null);
-							company.setText(null);
+					db.sentencia = db.conexion.createStatement();
+					user = db.findUser(find.getText());
+					name.setText(user.getName());
+					lastName.setText(user.getLastName());
+					birthday.setText(user.getBirthday());
+					email.setText(user.getEmail());
+					number.setText(Long.toString(user.getNumber()));
+					company.setText(user.getCompany());
+					db.conexion.close();
+					db.resultado.close();
+					db.sentencia.close();
 				}catch(Exception ex) {
 					JOptionPane.showMessageDialog(null, "Error: "+ex.getMessage(),
 							"error", JOptionPane.ERROR_MESSAGE);
@@ -74,26 +77,25 @@ public class Insert {
 			}
 		});
 		
+		panel.add(labelfind);
+		panel.add(find);
 		panel.add(labelname);
 		panel.add(name);
-		panel.add(labellastName);
 		panel.add(labellastName);
 		panel.add(lastName);
 		panel.add(labelbirthday);
 		panel.add(birthday);
 		panel.add(labelemail);
 		panel.add(email);
-		panel.add(labelbirthday);
-		panel.add(birthday);
 		panel.add(labelnumber);
 		panel.add(number);
 		panel.add(labelcompany);
 		panel.add(company);
-		panel.add(saveButton);
+		panel.add(findButton);
 		
 		window.add(panel);
 		window.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-		window.setSize(200, 350);
+		window.setSize(200, 390);
 		window.setLocationRelativeTo(null);
 		window.setVisible(true);
 	}
