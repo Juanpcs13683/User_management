@@ -11,12 +11,20 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 
+/**
+ * Clase que contiene el entorno grafico que permite buscar todos los usuarios existentes en la base de datos.
+ * @author juanpcs
+ *
+ */
 public class SearchAll {
 	public static void main(String[] args) {
 		SearchAll findAll = new SearchAll();
 		findAll.findAll();
 	}
 	
+	/**
+	 * Metodo que contiene los elementos del entorno grafico tales como cuadros de texto y botones.
+	 */
 	public void findAll() {
 		JFrame window = new JFrame("All Users");
 		window.setExtendedState(JFrame.MAXIMIZED_BOTH);

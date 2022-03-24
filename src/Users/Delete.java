@@ -12,12 +12,20 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+/**
+ * Clase que contiene el entorno grafico dedicado a la busqueda y eliminacion de un usuario especifico.
+ * @author juanpcs
+ *
+ */
 public class Delete {
 	public static void main(String[] args) {
 		Delete delete = new Delete();
 		delete.delete();
 	}
 	
+	/**
+	 * Metodo que contiene los elementos graficos del entorno.
+	 */
 	public void delete() {
 		JFrame window = new JFrame("Delete User");
 		JPanel panel = new JPanel();

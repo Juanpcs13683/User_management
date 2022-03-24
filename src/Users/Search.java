@@ -11,12 +11,20 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+/**
+ * Clase que contiene el entorno grafico referente a la busqueda especifica de un usuario.
+ * @author juanpcs
+ *
+ */
 public class Search {
 	public static void main(String[] args) {
 		Search find = new Search();
 		find.find();
 	}
 	
+	/**
+	 * Metodo que contiene los elementos del entorno grafico de busqueda, tales como cuadros de texto y botones.
+	 */
 	public void find() {
 		JFrame window = new JFrame("Find User");
 		JPanel panel = new JPanel();

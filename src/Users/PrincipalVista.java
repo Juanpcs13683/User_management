@@ -10,6 +10,11 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+/**
+ * Clase que contiene el entorno grafico donde se encuentran los diferentes menus del CRUD de usuarios.
+ * @author juanpcs
+ *
+ */
 public class PrincipalVista {
 	public static void main(String[] args) {
 		JFrame window = new JFrame("Users management");

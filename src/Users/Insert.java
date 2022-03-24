@@ -7,12 +7,20 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
+/**
+ * Clase que contiene el entorno grafico referente a la insercion de un nuevo usuario.
+ * @author juanpcs
+ *
+ */
 public class Insert {
 	public static void main(String[] args) {
 		Insert i = new Insert();
 		i.insert();
 	}
 	
+	/**
+	 * Metodo que contiene los elementos del entorno grafico, tales como cuadros de texto y botones.
+	 */
 	public void insert() {
 		JFrame window = new JFrame("Insert");
 		

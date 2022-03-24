@@ -12,12 +12,20 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+/**
+ * Clase que contiene el entorno grafico que permite la busqueda y actualizacion de un usuario especifico.
+ * @author juanpcs
+ *
+ */
 public class Update {
 	public static void main(String[] args) {
 		Update update = new Update();
 		update.update();
 	}
 	
+	/**
+	 * Metodo que contiene los elementos del entorno grafico, tales como cuadros de texto y botones.
+	 */
 	public void update() {
 		JFrame window = new JFrame("Update User");
 		JPanel panel = new JPanel();
